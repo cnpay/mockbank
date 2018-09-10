@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>模拟银行之： b2cpay客户端</h3>
+    <form action="/b2cpay" name="form1" id="form1" method="POST">
+        merchant:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="merchant" id="merchant" value="baidu.com"><br><br>
+        password:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="password" id="password" value="baidu"><br><br>
+        merchant_order_id:<input type="text" name="merchant_order_id" id="merchant_order_id" value="merchant_order_id"><br><br>
+        amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="amount" id="amount" value="0.01"><br><br>
+        returnUrl:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="returnUrl" id="returnUrl" value="http://59.110.157.92:8888/returnUrl"><br><br>
+        notifyUrl:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="notifyUrl" id="notifyUrl" value="http://59.110.157.92:8888/notifyUrl"><br><br>
+        <input type="button" id="button" value="提交">
+    </form>
+    <script>
+        document.getElementById("merchant_order_id").value=new Date().getTime().toString()
+        document.getElementById("button").onclick=function(){
+            document.getElementById("form1").submit()
+        }
+    </script>
+</body>
+</html>
